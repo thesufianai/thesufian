@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sufian | PORTFOLIO</title>
+  <title>Sufian | Portfolio</title>
   <meta name="description" content="AI-based website, chatbot and web app services by Sufian. Browse services and request a consultation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,6 +128,19 @@ ul { padding-left: 1.2rem; margin: 0; }
 .site-nav a:hover { color: var(--brand); }
 .nav-book { padding: .5rem 1.1rem; font-size: .92rem; }
 .req { color: #dc2626; margin-left: 2px; font-weight: 700; }
+.time-pick { display: flex; gap: 8px; }
+.time-pick select { flex: 1; }
+.media-dialog { width: min(860px, 94vw); border: 0; border-radius: 16px; padding: 0; }
+.media-dialog::backdrop { background: rgba(15, 23, 42, .6); }
+.media-body { padding: 1.5rem; max-height: 88vh; overflow-y: auto; }
+.media-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.media-head h2 { margin: 0; font-size: 1.35rem; }
+.media-close { border: 0; background: transparent; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.media-list { display: grid; gap: 14px; margin-top: 14px; }
+.media-list img, .media-list video { width: 100%; height: auto; border-radius: 12px; display: block; background: #0f172a; }
+.gallery-tile { cursor: pointer; overflow: hidden; }
+.gallery-tile img, .gallery-tile video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-tile figcaption { position: absolute; left: 10px; bottom: 8px; color: #fff; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
 .nav-toggle { display: none; }
 .nav-toggle {
   display: none; background: none; border: 0; width: 44px; height: 44px;
@@ -468,14 +481,13 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            
-<h1><span class="grad">Your Goals.</span> Our Solutions. Real Growth.</h1>
-            <p class="lead">I'm Sufian, an AI-based service provider. I help businesses automate daily work, answer customers 24/7 with smart chatbots, understand their web data, and promote their products with AI-powered ads, posts and videos.</p>
+            <h1 data-cms="hero_title" data-cms-html>Let <span class="grad">AI</span> do the heavy lifting, so your business can grow.</h1>
+            <p class="lead" data-cms="hero_lead">I'm Sufian, an AI-based service provider. I help businesses automate daily work, answer customers 24/7 with smart chatbots, understand their web data, and promote their products with AI-powered ads, posts and videos.</p>
             <div class="hero-cta">
               <a class="btn btn-primary" href="#services">Browse services</a>
               <a class="btn btn-ghost" href="#contact">Contact me</a>
             </div>
-            <p class="offer-pill"><span aria-hidden="true">🎁</span> Your first small project is free. <button type="button" class="offer-book" data-book-any>Book now</button></p>
+            <p class="offer-pill"><span aria-hidden="true">🎁</span> <span data-cms="offer_text">Your first small project is free.</span> <button type="button" class="offer-book" data-book-any>Book now</button></p>
           </div>
         </div>
       </section>
@@ -483,7 +495,7 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
       <section id="about" class="about">
         <div class="container">
           <h2>About</h2>
-          <p>I help businesses use AI to automate work, talk to customers, understand their data, and promote their products. Replace this paragraph with your own background and approach.</p>
+          <p data-cms="about_text">I help businesses use AI to automate work, talk to customers, understand their data, and promote their products. Replace this paragraph with your own background and approach.</p>
           <ul class="tags" aria-label="Skills">
             <li>AI Automation</li><li>Chatbots</li><li>Web Analytics</li><li>Digital Advertising</li><li>Product Promotion</li><li>Social Posts</li><li>Product Video</li><li>AI Motion Graphics</li>
           </ul>
@@ -493,8 +505,8 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
       <section id="services" class="services">
         <div class="container">
           <header class="section-head">
-            <h2>Services</h2>
-            <p>Find the right AI or web service, open its details, and request a consultation.</p>
+            <h2 data-cms="services_title">Services</h2>
+            <p data-cms="services_text">Find the right AI or web service, open its details, and request a consultation.</p>
           </header>
 
           <div class="toolbar">
@@ -514,8 +526,8 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
       <section id="projects" class="projects">
         <div class="container">
           <header class="section-head">
-            <h2>Projects</h2>
-            <p>A selection of AI and web work I have delivered.</p>
+            <h2 data-cms="projects_title">Projects</h2>
+            <p data-cms="projects_text">A selection of AI and web work I have delivered.</p>
           </header>
           <div id="project-chips" class="chips project-chips" role="group" aria-label="Filter projects by category"></div>
           <div id="project-grid" class="gig-grid"></div>
@@ -526,8 +538,8 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
       <section id="contact" class="contact">
         <div class="container">
           <header class="section-head">
-            <h2>Let's talk about your project</h2>
-            <p>Tell me what you want to automate, build or promote. Email or WhatsApp is the quickest way to reach me, or you can book a consultation for the service you need.</p>
+            <h2 data-cms="contact_title">Let's talk about your project</h2>
+            <p data-cms="contact_text">Tell me what you want to automate, build or promote. Email or WhatsApp is the quickest way to reach me, or you can book a consultation for the service you need.</p>
           </header>
           <div class="contact-grid">
             <a id="contact-email" class="contact-card" href="#">
@@ -561,9 +573,14 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> thesufian. All rights reserved.</p>
+      <p>© <span id="year"></span> <span data-cms="footer_text">thesufian. All rights reserved.</span></p>
     </div>
   </footer>
+
+  <!-- MEDIA / PROJECT VIEWER -->
+  <dialog id="media-dialog" class="media-dialog" aria-label="Project viewer">
+    <div id="media-body" class="media-body"></div>
+  </dialog>
 
   <!-- BOOKING DIALOG -->
   <dialog id="booking-dialog" aria-labelledby="booking-title">
@@ -592,8 +609,12 @@ button.contact-card { width: 100%; font: inherit; text-align: left; cursor: poin
           </div>
 
           <div class="field">
-            <label for="b-slot">Time slot <span class="req" aria-hidden="true">*</span></label>
-            <select id="b-slot" aria-describedby="err-slot"></select>
+            <label for="b-hour">Time slot <span class="req" aria-hidden="true">*</span></label>
+            <div class="time-pick">
+              <select id="b-hour" aria-label="Time" aria-describedby="err-slot"></select>
+              <select id="b-ampm" aria-label="AM or PM" aria-describedby="err-slot"></select>
+            </div>
+            <input type="hidden" id="b-slot">
             <span class="error" id="err-slot" aria-live="polite"></span>
           </div>
 
@@ -981,9 +1002,25 @@ const PROFILE = {
 };
 
 /* Demo time slots. In live Calendly mode, Calendly shows real availability instead. */
-// Every 30 minutes across the full day: 12:00 AM to 11:30 PM (48 slots)
-const SLOTS = Array.from({ length: 48 }, (_, i) => {
-  const mins = i * 30;
+// Time picker: 12-hour times (12:00 … 11:30) in one dropdown, AM/PM in another
+const TIME_OPTIONS = Array.from({ length: 24 }, (_, i) => {
+  const hour = Math.floor(i / 2) % 12;
+  return `${hour === 0 ? 12 : hour}:${i % 2 ? "30" : "00"}`;
+});
+function populateSlotPickers() {
+  $("#b-hour").innerHTML =
+    `<option value="">Time…</option>` + TIME_OPTIONS.map((t) => `<option value="${t}">${t}</option>`).join("");
+  $("#b-ampm").innerHTML = `<option value="">AM/PM</option><option>AM</option><option>PM</option>`;
+  $("#b-slot").value = "";
+}
+function syncSlot() {
+  const t = $("#b-hour").value;
+  const ap = $("#b-ampm").value;
+  $("#b-slot").value = t && ap ? `${t} ${ap}` : "";
+}
+// Every 30 minutes from 12:00 AM to 12:00 AM (the next day's midnight), 49 slots
+const SLOTS = Array.from({ length: 49 }, (_, i) => {
+  const mins = (i * 30) % 1440;
   const h24 = Math.floor(mins / 60);
   const m = String(mins % 60).padStart(2, "0");
   const h12 = h24 % 12 === 0 ? 12 : h24 % 12;
@@ -1132,7 +1169,7 @@ function renderGig(g) {
     <div class="block">
       <h2>Project gallery</h2>
       <div class="gallery">
-        ${g.gallery.map((t) => `<figure class="gallery-tile" style="${thumbStyle(g)}"><figcaption>${esc(t)}</figcaption></figure>`).join("")}
+        ${g.gallery.map((t) => galleryTileHTML(g, t)).join("")}
       </div>
       <p class="fine">These are placeholders. Replace them with screenshots of your real projects.</p>
     </div>
@@ -1171,7 +1208,7 @@ function showGigView(gig) {
 function showHomeView() {
   $("#home").hidden = false;
   $("#gig-view").hidden = true;
-  document.title = "Sufian | AI Services Marketplace";
+  document.title = "Sufian | Portfolio";
 }
 
 /* =====================================================================
@@ -1244,8 +1281,7 @@ function openBooking(gig, trigger) {
   bookingResult.hidden = true;
   bookingResult.innerHTML = "";
   $("#b-date").min = todayISO();
-  $("#b-slot").innerHTML =
-    `<option value="">Select a time…</option>` + SLOTS.map((s) => `<option value="${s}">${s}</option>`).join("");
+  populateSlotPickers();
   clearErrors();
   updateModeBanner();
 
@@ -1466,6 +1502,8 @@ document.addEventListener("click", (e) => {
   }
 });
 
+$("#b-hour").addEventListener("change", syncSlot);
+$("#b-ampm").addEventListener("change", syncSlot);
 $("#search").addEventListener("input", (e) => {
   state.query = e.target.value;
   renderGrid();
@@ -1558,6 +1596,53 @@ function renderProjectChips() {
     .join("");
 }
 
+const isMediaUrl = (u) => /^(https?:|data:|assets\/)/i.test(String(u || ""));
+const isVideoUrl = (u) => /^data:video\//i.test(u) || /\.(mp4|webm|mov|ogg)([?#].*)?$/i.test(u);
+function mediaHTML(u) {
+  return isVideoUrl(u)
+    ? `<video src="${esc(u)}" controls preload="metadata"></video>`
+    : `<img src="${esc(u)}" alt="" loading="lazy">`;
+}
+function galleryTileHTML(g, t) {
+  if (!isMediaUrl(t)) {
+    return `<figure class="gallery-tile" style="${thumbStyle(g)}"><figcaption>${esc(t)}</figcaption></figure>`;
+  }
+  const inner = isVideoUrl(t)
+    ? `<video src="${esc(t)}" muted preload="metadata"></video>`
+    : `<img src="${esc(t)}" alt="" loading="lazy">`;
+  return `<figure class="gallery-tile" data-view-gallery="${esc(g.id)}">${inner}</figure>`;
+}
+function openMedia({ title, description = "", items = [], image = null, link = "" }) {
+  const all = [image, ...items].filter(isMediaUrl);
+  $("#media-body").innerHTML = `
+    <div class="media-head">
+      <h2>${esc(title)}</h2>
+      <button type="button" class="media-close" aria-label="Close" data-media-close>×</button>
+    </div>
+    ${description ? `<p class="muted">${esc(description)}</p>` : ""}
+    ${link ? `<p><a class="btn btn-primary btn-sm" href="${esc(link)}" target="_blank" rel="noopener">Open project link</a></p>` : ""}
+    ${all.length
+      ? `<div class="media-list">${all.map(mediaHTML).join("")}</div>`
+      : `<p class="muted">No pictures or videos added yet.</p>`}`;
+  $("#media-dialog").showModal();
+}
+$("#media-dialog").addEventListener("click", (e) => {
+  if (e.target.id === "media-dialog" || e.target.closest("[data-media-close]")) $("#media-dialog").close();
+});
+document.addEventListener("click", (e) => {
+  const pv = e.target.closest("[data-view-project]");
+  if (pv) {
+    const p = PROJECTS.find((x) => String(x.id) === pv.dataset.viewProject);
+    if (p) openMedia({ title: p.title, description: p.description, image: p.image, items: p.gallery || [], link: p.link });
+    return;
+  }
+  const gv = e.target.closest("[data-view-gallery]");
+  if (gv) {
+    const g = findGig(gv.dataset.viewGallery);
+    if (g) openMedia({ title: g.title, description: g.description, items: g.gallery || [] });
+  }
+});
+
 function projectCardHTML(p) {
   const bg = p.image
     ? `background-image:url('${esc(p.image)}');background-size:cover;background-position:center`
@@ -1572,7 +1657,7 @@ function projectCardHTML(p) {
         <h3 class="gig-card__title">${esc(p.title)}</h3>
         <p class="gig-card__cat">${p.tags.map(esc).join(" · ")}</p>
         <p class="project-desc">${esc(p.description)}</p>
-        ${p.link ? `<div class="gig-card__foot"><a class="btn btn-ghost btn-sm" href="${esc(p.link)}" target="_blank" rel="noopener">View project</a></div>` : ""}
+        <div class="gig-card__foot"><button type="button" class="btn btn-ghost btn-sm" data-view-project="${esc(p.id)}">View project</button></div>
       </div>
     </article>`;
 }
@@ -1588,7 +1673,7 @@ function renderProjects() {
    ===================================================================== */
 const SUPABASE_URL = "https://xuhnoexujhwibmyldzpe.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh1aG5vZXh1amh3aWJteWxkenBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMTE2NTMsImV4cCI6MjEwODY4NzY1M30.ejOhaLCRhwoogE0PIp5ZmtrljEKW_MCpdGC1cDdv1Vc";
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
 const DEFAULT_THUMB = ["#0ea5e9", "#6366f1"];
 
@@ -1624,14 +1709,37 @@ function projectFromRow(r) {
     thumb: DEFAULT_THUMB,
     description: r.description || "",
     link: r.link || "",
+    gallery: r.gallery || [],
     tags: [],
     technologies: [],
     placeholder: false,
   };
 }
 
+async function loadSiteContent() {
+  if (!supabaseClient) return;
+  const { data, error } = await supabaseClient.from("site_content").select("key, value");
+  if (error || !data) return;
+  const map = Object.fromEntries(data.map((r) => [r.key, r.value]));
+  document.querySelectorAll("[data-cms]").forEach((el) => {
+    const v = map[el.dataset.cms];
+    if (v === undefined || v === null) return;
+    if (el.hasAttribute("data-cms-html")) el.innerHTML = v;
+    else el.textContent = v;
+  });
+  ["email", "whatsapp", "phone", "linkedin", "facebook", "instagram"].forEach((k) => {
+    if (map["profile_" + k] !== undefined) PROFILE[k] = map["profile_" + k];
+  });
+  initContact();
+}
+
 async function loadLiveData() {
+  if (!supabaseClient) {
+    console.warn("Supabase library not loaded; showing built-in content.");
+  }
   try {
+    if (!supabaseClient) throw new Error("no Supabase client");
+    await loadSiteContent();
     const [g, p] = await Promise.all([
       supabaseClient.from("gigs").select("*").eq("published", true).order("sort_order"),
       supabaseClient.from("projects").select("*").eq("published", true).order("sort_order"),
@@ -1656,6 +1764,10 @@ async function loadLiveData() {
 }
 
 async function saveConsultation(b, gig) {
+  if (!supabaseClient) {
+    console.error("Supabase is not available; consultation request not saved.");
+    return false;
+  }
   const { error } = await supabaseClient.from("consultation_requests").insert({
     name: b.name,
     email: b.email,
